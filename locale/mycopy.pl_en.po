@@ -1,0 +1,768 @@
+# mycopy.pl.
+# Copyright (C) 2024 Leander Jedamus
+# This file is distributed under the same license as the mycopy.pl package.
+# ljedamus@web.de, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mycopy.pl 1.0\n"
+"Report-Msgid-Bugs-To: Leander Jedamus <ljedamus@web.de>\n"
+"POT-Creation-Date: 2024-02-16 20:17+0100\n"
+"PO-Revision-Date: 2024-02-16 20:17+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: main.c:52
+#, c-format
+msgid "usage: %s <filename> <1M> [<output path>]\n"
+msgstr "usage: %s <filename> <1M> [<output path>]\n"
+
+#: main.c:69
+#, c-format
+msgid "filename ='%s', path='%s'\n"
+msgstr "filename ='%s', path='%s'\n"
+
+#: main.c:97
+#, c-format
+msgid "warning: size %ld too small,  now is %ld.\n"
+msgstr "warning: size %ld too small,  now is %ld.\n"
+
+#: main.c:105 main.c:123 main.c:174
+#, c-format
+msgid "error: fopen '%s'"
+msgstr "error: fopen '%s'"
+
+#: main.c:141
+#, c-format
+msgid "error: fread '%s'"
+msgstr "error: fread '%s'"
+
+#: main.c:154
+#, c-format
+msgid "error: fwrite '%s'"
+msgstr "error: fwrite '%s'"
+
+#: translate.c:11
+msgid "Accessing a corrupted shared library"
+msgstr "Accessing a corrupted shared library"
+
+#: translate.c:12
+msgid "Address already in use"
+msgstr "Address already in use"
+
+#: translate.c:13
+msgid "Address family not supported by protocol"
+msgstr "Address family not supported by protocol"
+
+#: translate.c:14
+msgid "Address family not supported by protocol family"
+msgstr "Address family not supported by protocol family"
+
+#: translate.c:15
+msgid "Advertise error"
+msgstr "Advertise error"
+
+#: translate.c:16
+msgid "Argument list too long"
+msgstr "Argument list too long"
+
+#: translate.c:17
+msgid "Attempting to link in too many shared libraries"
+msgstr "Attempting to link in too many shared libraries"
+
+#: translate.c:18
+msgid "Attribute not found"
+msgstr "Attribute not found"
+
+#: translate.c:19
+msgid "Authentication error"
+msgstr "Authentication error"
+
+#: translate.c:20
+msgid "Bad address"
+msgstr "Bad address"
+
+#: translate.c:21
+msgid "Bad CPU type in executable"
+msgstr "Bad CPU type in executable"
+
+#: translate.c:22
+msgid "Bad executable (or shared library)"
+msgstr "Bad executable (or shared library)"
+
+#: translate.c:23
+msgid "Bad file descriptor"
+msgstr "Bad file descriptor"
+
+#: translate.c:24
+msgid "Bad font file format"
+msgstr "Bad font file format"
+
+#: translate.c:25
+msgid "Bad message"
+msgstr "Bad message"
+
+#: translate.c:26
+msgid "Bad procedure for program"
+msgstr "Bad procedure for program"
+
+#: translate.c:27
+msgid "Block device required"
+msgstr "Block device required"
+
+#: translate.c:28
+msgid "Broken pipe"
+msgstr "Broken pipe"
+
+#: translate.c:29
+msgid "Can not access a needed shared library"
+msgstr "Can not access a needed shared library"
+
+#: translate.c:30
+msgid "Cannot allocate memory"
+msgstr "Cannot allocate memory"
+
+#: translate.c:31
+msgid "Cannot assign requested address"
+msgstr "Cannot assign requested address"
+
+#: translate.c:32
+msgid "Cannot exec a shared library directly"
+msgstr "Cannot exec a shared library directly"
+
+#: translate.c:33
+msgid "Cannot send after transport endpoint shutdown"
+msgstr "Cannot send after transport endpoint shutdown"
+
+#: translate.c:34
+msgid "Can't assign requested address"
+msgstr "Can't assign requested address"
+
+#: translate.c:35
+msgid "Can't send after socket shutdown"
+msgstr "Can't send after socket shutdown"
+
+#: translate.c:36
+msgid "Channel number out of range"
+msgstr "Channel number out of range"
+
+#: translate.c:37
+msgid "Communication error on send"
+msgstr "Communication error on send"
+
+#: translate.c:38
+msgid "Connection refused"
+msgstr "Connection refused"
+
+#: translate.c:39
+msgid "Connection reset by peer"
+msgstr "Connection reset by peer"
+
+#: translate.c:40
+msgid "Connection timed out"
+msgstr "Connection timed out"
+
+#: translate.c:41
+msgid "Cross-device link"
+msgstr "Cross-device link"
+
+#: translate.c:42
+msgid "Destination address required"
+msgstr "Destination address required"
+
+#: translate.c:43
+msgid "Device error"
+msgstr "Device error"
+
+#: translate.c:44
+msgid "Device not a stream"
+msgstr "Device not a stream"
+
+#: translate.c:45
+msgid "Device not configured"
+msgstr "Device not configured"
+
+#: translate.c:46
+msgid "Device or resource busy"
+msgstr "Device or resource busy"
+
+#: translate.c:47
+msgid "Device power is off"
+msgstr "Device power is off"
+
+#: translate.c:48
+msgid "Directory not empty"
+msgstr "Directory not empty"
+
+#: translate.c:49
+msgid "Disc quota exceeded"
+msgstr "Disc quota exceeded"
+
+#: translate.c:50
+msgid "Disk quota exceeded"
+msgstr "Disk quota exceeded"
+
+#: translate.c:51
+msgid "EMULTIHOP (Reserved)"
+msgstr "EMULTIHOP (Reserved)"
+
+#: translate.c:52
+msgid "ENOLINK (Reserved)"
+msgstr "ENOLINK (Reserved)"
+
+#: translate.c:53
+msgid "Exchange full"
+msgstr "Exchange full"
+
+#: translate.c:54
+msgid "Exec format error"
+msgstr "Exec format error"
+
+#: translate.c:55
+msgid "File descriptor in bad state"
+msgstr "File descriptor in bad state"
+
+#: translate.c:56
+msgid "File exists"
+msgstr "File exists"
+
+#: translate.c:57
+msgid "File name too long"
+msgstr "File name too long"
+
+#: translate.c:58
+msgid "File too large"
+msgstr "File too large"
+
+#: translate.c:59
+msgid "Function not implemented"
+msgstr "Function not implemented"
+
+#: translate.c:60
+msgid "Host is down"
+msgstr "Host is down"
+
+#: translate.c:61
+msgid "Identifier removed"
+msgstr "Identifier removed"
+
+#: translate.c:62
+msgid "Illegal byte sequence"
+msgstr "Illegal byte sequence"
+
+#: translate.c:63
+msgid "Illegal seek"
+msgstr "Illegal seek"
+
+#: translate.c:64
+msgid "Inappropriate file type or format"
+msgstr "Inappropriate file type or format"
+
+#: translate.c:65
+msgid "Inappropriate ioctl for device"
+msgstr "Inappropriate ioctl for device"
+
+#: translate.c:66
+msgid "Input/output error"
+msgstr "Input/output error"
+
+#: translate.c:67
+msgid "Interface output queue is full"
+msgstr "Interface output queue is full"
+
+#: translate.c:68
+msgid "Interrupted system call"
+msgstr "Interrupted system call"
+
+#: translate.c:69
+msgid "Interrupted system call should be restarted"
+msgstr "Interrupted system call should be restarted"
+
+#: translate.c:70
+msgid "Invalid argument"
+msgstr "Invalid argument"
+
+#: translate.c:71
+msgid "Invalid cross-device link"
+msgstr "Invalid cross-device link"
+
+#: translate.c:72
+msgid "Invalid exchange"
+msgstr "Invalid exchange"
+
+#: translate.c:73
+msgid "Invalid or incomplete multibyte or wide character"
+msgstr "Invalid or incomplete multibyte or wide character"
+
+#: translate.c:74
+msgid "Invalid request code"
+msgstr "Invalid request code"
+
+#: translate.c:75
+msgid "Invalid request descriptor"
+msgstr "Invalid request descriptor"
+
+#: translate.c:76
+msgid "Invalid slot"
+msgstr "Invalid slot"
+
+#: translate.c:77
+msgid "Is a directory"
+msgstr "Is a directory"
+
+#: translate.c:78
+msgid "Is a named type file"
+msgstr "Is a named type file"
+
+#: translate.c:79
+msgid "Key has been revoked"
+msgstr "Key has been revoked"
+
+#: translate.c:80
+msgid "Key has expired"
+msgstr "Key has expired"
+
+#: translate.c:81
+msgid "Key was rejected by service"
+msgstr "Key was rejected by service"
+
+#: translate.c:82
+msgid "Level 2 halted"
+msgstr "Level 2 halted"
+
+#: translate.c:83
+msgid "Level 2 not synchronized"
+msgstr "Level 2 not synchronized"
+
+#: translate.c:84
+msgid "Level 3 halted"
+msgstr "Level 3 halted"
+
+#: translate.c:85
+msgid "Level 3 reset"
+msgstr "Level 3 reset"
+
+#: translate.c:86
+msgid ".lib section in a.out corrupted"
+msgstr ".lib section in a.out corrupted"
+
+#: translate.c:87
+msgid "Link has been severed"
+msgstr "Link has been severed"
+
+#: translate.c:88
+msgid "Link number out of range"
+msgstr "Link number out of range"
+
+#: translate.c:89
+msgid "Machine is not on the network"
+msgstr "Machine is not on the network"
+
+#: translate.c:90
+msgid "Malformed Mach-o file"
+msgstr "Malformed Mach-o file"
+
+#: translate.c:91
+msgid "Memory page has hardware error"
+msgstr "Memory page has hardware error"
+
+#: translate.c:92
+msgid "Message too long"
+msgstr "Message too long"
+
+#: translate.c:93
+msgid "Multihop attempted"
+msgstr "Multihop attempted"
+
+#: translate.c:94
+msgid "Name not unique on network"
+msgstr "Name not unique on network"
+
+#: translate.c:95
+msgid "Need authenticator"
+msgstr "Need authenticator"
+
+#: translate.c:96
+msgid "Network dropped connection on reset"
+msgstr "Network dropped connection on reset"
+
+#: translate.c:97
+msgid "Network is down"
+msgstr "Network is down"
+
+#: translate.c:98
+msgid "Network is unreachable"
+msgstr "Network is unreachable"
+
+#: translate.c:99
+msgid "No anode"
+msgstr "No anode"
+
+#: translate.c:100
+msgid "No buffer space available"
+msgstr "No buffer space available"
+
+#: translate.c:101
+msgid "No child processes"
+msgstr "No child processes"
+
+#: translate.c:102
+msgid "No CSI structure available"
+msgstr "No CSI structure available"
+
+#: translate.c:103
+msgid "No data available"
+msgstr "No data available"
+
+#: translate.c:104
+msgid "No locks available"
+msgstr "No locks available"
+
+#: translate.c:105
+msgid "No medium found"
+msgstr "No medium found"
+
+#: translate.c:106
+msgid "No message available on STREAM"
+msgstr "No message available on STREAM"
+
+#: translate.c:107
+msgid "No message of desired type"
+msgstr "No message of desired type"
+
+#: translate.c:108
+msgid "No route to host"
+msgstr "No route to host"
+
+#: translate.c:109
+msgid "No space left on device"
+msgstr "No space left on device"
+
+#: translate.c:110
+msgid "No STREAM resources"
+msgstr "No STREAM resources"
+
+#: translate.c:111
+msgid "No such device"
+msgstr "No such device"
+
+#: translate.c:112
+msgid "No such device or address"
+msgstr "No such device or address"
+
+#: translate.c:113
+msgid "No such file or directory"
+msgstr "No such file or directory"
+
+#: translate.c:114
+msgid "No such process"
+msgstr "No such process"
+
+#: translate.c:115
+msgid "Not a directory"
+msgstr "Not a directory"
+
+#: translate.c:116
+msgid "Not a STREAM"
+msgstr "Not a STREAM"
+
+#: translate.c:117
+msgid "Not a XENIX named type file"
+msgstr "Not a XENIX named type file"
+
+#: translate.c:118
+msgid "No XENIX semaphores available"
+msgstr "No XENIX semaphores available"
+
+#: translate.c:119
+msgid "Numerical argument out of domain"
+msgstr "Numerical argument out of domain"
+
+#: translate.c:120
+msgid "Numerical result out of range"
+msgstr "Numerical result out of range"
+
+#: translate.c:121
+msgid "Object is remote"
+msgstr "Object is remote"
+
+#: translate.c:122
+msgid "Operation already in progress"
+msgstr "Operation already in progress"
+
+#: translate.c:123
+msgid "Operation canceled"
+msgstr "Operation canceled"
+
+#: translate.c:124
+msgid "Operation not permitted"
+msgstr "Operation not permitted"
+
+#: translate.c:125
+msgid "Operation not possible due to RF-kill"
+msgstr "Operation not possible due to RF-kill"
+
+#: translate.c:126
+msgid "Operation not supported"
+msgstr "Operation not supported"
+
+#: translate.c:127
+msgid "Operation not supported by device"
+msgstr "Operation not supported by device"
+
+#: translate.c:128
+msgid "Operation not supported on socket"
+msgstr "Operation not supported on socket"
+
+#: translate.c:129
+msgid "Operation now in progress"
+msgstr "Operation now in progress"
+
+#: translate.c:130
+msgid "Operation timed out"
+msgstr "Operation timed out"
+
+#: translate.c:131
+msgid "Out of streams resources"
+msgstr "Out of streams resources"
+
+#: translate.c:132
+msgid "Owner died"
+msgstr "Owner died"
+
+#: translate.c:133
+msgid "Package not installed"
+msgstr "Package not installed"
+
+#: translate.c:134
+msgid "Permission denied"
+msgstr "Permission denied"
+
+#: translate.c:135
+msgid "Policy not found"
+msgstr "Policy not found"
+
+#: translate.c:136
+msgid "Previous owner died"
+msgstr "Previous owner died"
+
+#: translate.c:137
+msgid "Program version wrong"
+msgstr "Program version wrong"
+
+#: translate.c:138
+msgid "Protocol driver not attached"
+msgstr "Protocol driver not attached"
+
+#: translate.c:139
+msgid "Protocol error"
+msgstr "Protocol error"
+
+#: translate.c:140
+msgid "Protocol family not supported"
+msgstr "Protocol family not supported"
+
+#: translate.c:141
+msgid "Protocol not available"
+msgstr "Protocol not available"
+
+#: translate.c:142
+msgid "Protocol not supported"
+msgstr "Protocol not supported"
+
+#: translate.c:143
+msgid "Protocol wrong type for socket"
+msgstr "Protocol wrong type for socket"
+
+#: translate.c:144
+msgid "Read-only file system"
+msgstr "Read-only file system"
+
+#: translate.c:145
+msgid "Remote address changed"
+msgstr "Remote address changed"
+
+#: translate.c:146
+msgid "Remote I/O error"
+msgstr "Remote I/O error"
+
+#: translate.c:147
+msgid "Required key not available"
+msgstr "Required key not available"
+
+#: translate.c:148
+msgid "Resource busy"
+msgstr "Resource busy"
+
+#: translate.c:149
+msgid "Resource deadlock avoided"
+msgstr "Resource deadlock avoided"
+
+#: translate.c:150
+msgid "Resource temporarily unavailable"
+msgstr "Resource temporarily unavailable"
+
+#: translate.c:151
+msgid "Result too large"
+msgstr "Result too large"
+
+#: translate.c:152
+msgid "RFS specific error"
+msgstr "RFS specific error"
+
+#: translate.c:153
+msgid "RPC prog. not avail"
+msgstr "RPC prog. not avail"
+
+#: translate.c:154
+msgid "RPC struct is bad"
+msgstr "RPC struct is bad"
+
+#: translate.c:155
+msgid "RPC version wrong"
+msgstr "RPC version wrong"
+
+#: translate.c:156
+msgid "Shared library version mismatch"
+msgstr "Shared library version mismatch"
+
+#: translate.c:157
+msgid "Socket is already connected"
+msgstr "Socket is already connected"
+
+#: translate.c:158
+msgid "Socket is not connected"
+msgstr "Socket is not connected"
+
+#: translate.c:159
+msgid "Socket operation on non-socket"
+msgstr "Socket operation on non-socket"
+
+#: translate.c:160
+msgid "Socket type not supported"
+msgstr "Socket type not supported"
+
+#: translate.c:161
+msgid "Software caused connection abort"
+msgstr "Software caused connection abort"
+
+#: translate.c:162
+msgid "Srmount error"
+msgstr "Srmount error"
+
+#: translate.c:163
+msgid "Stale file handle"
+msgstr "Stale file handle"
+
+#: translate.c:164
+msgid "Stale NFS file handle"
+msgstr "Stale NFS file handle"
+
+#: translate.c:165
+msgid "State not recoverable"
+msgstr "State not recoverable"
+
+#: translate.c:166
+msgid "STREAM ioctl timeout"
+msgstr "STREAM ioctl timeout"
+
+#: translate.c:167
+msgid "Streams pipe error"
+msgstr "Streams pipe error"
+
+#: translate.c:168
+msgid "Structure needs cleaning"
+msgstr "Structure needs cleaning"
+
+#: translate.c:169
+msgid "Success"
+msgstr "Success"
+
+#: translate.c:170
+msgid "Text file busy"
+msgstr "Text file busy"
+
+#: translate.c:171
+msgid "Timer expired"
+msgstr "Timer expired"
+
+#: translate.c:172
+msgid "Too many levels of remote in path"
+msgstr "Too many levels of remote in path"
+
+#: translate.c:173
+msgid "Too many levels of symbolic links"
+msgstr "Too many levels of symbolic links"
+
+#: translate.c:174
+msgid "Too many links"
+msgstr "Too many links"
+
+#: translate.c:175
+msgid "Too many open files"
+msgstr "Too many open files"
+
+#: translate.c:176
+msgid "Too many open files in system"
+msgstr "Too many open files in system"
+
+#: translate.c:177
+msgid "Too many processes"
+msgstr "Too many processes"
+
+#: translate.c:178
+msgid "Too many references: cannot splice"
+msgstr "Too many references: cannot splice"
+
+#: translate.c:179
+msgid "Too many references: can't splice"
+msgstr "Too many references: can't splice"
+
+#: translate.c:180
+msgid "Too many users"
+msgstr "Too many users"
+
+#: translate.c:181
+msgid "Transport endpoint is already connected"
+msgstr "Transport endpoint is already connected"
+
+#: translate.c:182
+msgid "Transport endpoint is not connected"
+msgstr "Transport endpoint is not connected"
+
+#: translate.c:183
+msgid "Undefined error: 0"
+msgstr "Undefined error: 0"
+
+#: translate.c:184
+msgid "Unknown error: 107"
+msgstr "Unknown error: 107"
+
+#: translate.c:185
+msgid "Unknown error: 133"
+msgstr "Unknown error: 133"
+
+#: translate.c:186
+msgid "Unknown error 41"
+msgstr "Unknown error 41"
+
+#: translate.c:187
+msgid "Unknown error 58"
+msgstr "Unknown error 58"
+
+#: translate.c:188
+msgid "Value too large for defined data type"
+msgstr "Value too large for defined data type"
+
+#: translate.c:189
+msgid "Value too large to be stored in data type"
+msgstr "Value too large to be stored in data type"
+
+#: translate.c:190
+msgid "Wrong medium type"
+msgstr "Wrong medium type"

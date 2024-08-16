@@ -1,0 +1,134 @@
+EPERM 1 Die Operation ist nicht erlaubt
+ENOENT 2 Datei oder Verzeichnis nicht gefunden
+ESRCH 3 Kein passender Prozess gefunden
+EINTR 4 Unterbrechung während des Betriebssystemaufrufs
+EIO 5 Eingabe-/Ausgabefehler
+ENXIO 6 Kein passendes Gerät bzw. keine passende Adresse gefunden
+E2BIG 7 Die Argumentliste ist zu lang
+ENOEXEC 8 Fehler im Format der Programmdatei
+EBADF 9 Ungültiger Dateideskriptor
+ECHILD 10 Keine Kind-Prozesse
+EAGAIN 11 Die Ressource ist zur Zeit nicht verfügbar
+ENOMEM 12 Nicht genügend Hauptspeicher verfügbar
+EACCES 13 Keine Berechtigung
+EFAULT 14 Ungültige Adresse
+ENOTBLK 15 Es ist ein Block-Device notwendig
+EBUSY 16 Das Gerät oder die Ressource ist belegt
+EEXIST 17 Die Datei existiert bereits
+EXDEV 18 Ungültiger Link über Gerätegrenzen hinweg
+ENODEV 19 Kein passendes Gerät gefunden
+ENOTDIR 20 Ist kein Verzeichnis
+EISDIR 21 Ist ein Verzeichnis
+EINVAL 22 Das Argument ist ungültig
+ENFILE 23 Zu viele offene Dateien im System
+EMFILE 24 Zu viele offene Dateien
+ENOTTY 25 Unpassender IOCTL (I/O-Control) für das Gerät
+ETXTBSY 26 Das Programm kann nicht ausgeführt oder verändert werden (busy)
+EFBIG 27 Die Datei ist zu groß
+ENOSPC 28 Auf dem Gerät ist kein Speicherplatz mehr verfügbar
+ESPIPE 29 Nicht erlaubter Seek
+EROFS 30 Das Dateisystem ist nur lesbar
+EMLINK 31 Zu viele Links
+EPIPE 32 Datenübergabe unterbrochen (broken pipe)
+EDOM 33 Das numerische Argument ist außerhalb des Definitionsbereiches
+ERANGE 34 Das numerische Ergebnis ist außerhalb des gültigen Bereiches
+EDEADLK 35 Verklemmung beim Zugriff auf eine Ressource vermieden
+ENAMETOOLONG 36 Der Dateiname ist zu lang
+ENOLCK 37 Keine Sperren verfügbar
+ENOSYS 38 Die angeforderte Funktion ist nicht implementiert
+ENOTEMPTY 39 Das Verzeichnis ist nicht leer
+ELOOP 40 Zu viele Ebenen aus symbolischen Links
+EWOULDBLOCK 11 Die Ressource ist zur Zeit nicht verfügbar
+ENOMSG 42 Keine Nachricht des gewünschten Typs
+EIDRM 43 Bezeichner wurde entfernt
+ECHRNG 44 Die Kanalnummer ist außerhalb des gültigen Bereiches
+EL2NSYNC 45 Level 2 ist nicht synchronisiert
+EL3HLT 46 Level 3 angehalten
+EL3RST 47 Level 3 zurückgesetzt
+ELNRNG 48 Die Link-Nummer ist außerhalb des gültigen Bereiches
+EUNATCH 49 Das Protokoll ist nicht verfügbar
+ENOCSI 50 Keine »CSI«-Struktur verfügbar
+EL2HLT 51 Level 2 angehalten
+EBADE 52 Ungültiger Austausch
+EBADR 53 Ungültiger Aufruf-Deskriptor
+EXFULL 54 Vermittlung ist überfüllt
+ENOANO 55 Keine Anode
+EBADRQC 56 Ungültiger Aufruf-Code
+EBADSLT 57 Ungültiger Slot
+EDEADLOCK 35 Verklemmung beim Zugriff auf eine Ressource vermieden
+EBFONT 59 Ungültiges Font-Dateiformat
+ENOSTR 60 Das Gerät ist kein Stream
+ENODATA 61 Keine Daten verfügbar
+ETIME 62 Der virtuelle Zeitnehmer ist abgelaufen
+ENOSR 63 Keine Stream-Ressourcen mehr verfügbar
+ENONET 64 Die Maschine ist nicht an das Netzwerk angeschlossen
+ENOPKG 65 Das Zusatzpacket ist nicht installiert
+EREMOTE 66 Das Objekt ist remote
+ENOLINK 67 Der Link wurde beschädigt
+EADV 68 Konflikt mit Bekanntmachung
+ESRMNT 69 »Srmount«-Fehler
+ECOMM 70 Kommunikationsfehler beim Senden
+EPROTO 71 Protokollfehler
+EMULTIHOP 72 Ein »Multihop« wurde versucht
+EDOTDOT 73 RFS-spezifischer Fehler
+EBADMSG 74 Ungültige Nachricht
+EOVERFLOW 75 Der Wert ist zu groß für den definierten Datentyp
+ENOTUNIQ 76 Der Name ist im Netzwerk nicht eindeutig
+EBADFD 77 Die Dateizugriffsnummer ist in schlechter Verfassung
+EREMCHG 78 Die Adresse der Gegenstelle hat sich geändert
+ELIBACC 79 Auf eine benötigte Shared Library kann nicht zugegriffen werden
+ELIBBAD 80 Zugriff auf eine fehlerhafte oder defekte Shared Library
+ELIBSCN 81 ».lib«-Sektion in der »a.out«-Datei ist beschädigt
+ELIBMAX 82 Versuch zu viele Shared Libraries einzubinden
+ELIBEXEC 83 Eine Shared Library kann nicht direkt ausgeführt werden
+EILSEQ 84 Ungültiges oder unvollständiges Multi-Byte- oder Wide-Zeichen
+ERESTART 85 Der unterbrochene Betriebssystemaufruf sollte neu gestartet werden
+ESTRPIPE 86 Fehler in Stream-Pipe
+EUSERS 87 Zu viele Benutzer
+ENOTSOCK 88 Socket-Operation an einem nicht-Socket
+EDESTADDRREQ 89 Es ist eine Zieladresse notwendig
+EMSGSIZE 90 Die Nachricht ist zu lang
+EPROTOTYPE 91 Das Protokoll passt nicht zu dem Socket
+ENOPROTOOPT 92 Das Protokoll ist nicht verfügbar
+EPROTONOSUPPORT 93 Das Protokoll wird nicht unterstützt
+ESOCKTNOSUPPORT 94 Socket-Typ wird nicht unterstützt
+EOPNOTSUPP 95 Die Operation wird nicht unterstützt
+EPFNOSUPPORT 96 Die Protokollfamilie wird nicht unterstützt
+EAFNOSUPPORT 97 Die Adressfamilie wird von der Protokollfamilie nicht unterstützt
+EADDRINUSE 98 Die Adresse wird bereits verwendet
+EADDRNOTAVAIL 99 Die angeforderte Adresse kann nicht zugewiesen werden
+ENETDOWN 100 Das Netzwerk ist nicht aktiv
+ENETUNREACH 101 Das Netzwerk ist nicht erreichbar
+ENETRESET 102 Das Netzwerk hat die Verbindung nach einem Reset verloren
+ECONNABORTED 103 Das Programm verursachte den Abbruch der Verbindung
+ECONNRESET 104 Die Verbindung wurde vom Kommunikationspartner zurückgesetzt
+ENOBUFS 105 Kein Hauptspeicher für den Puffer verfügbar
+EISCONN 106 Der Socket ist bereits verbunden
+ENOTCONN 107 Der Socket ist nicht verbunden
+ESHUTDOWN 108 Ein Senden nach dem Beenden des Sockets ist nicht möglich
+ETOOMANYREFS 109 Zu viele Referenzen: can't splice
+ETIMEDOUT 110 Die Wartezeit für die Verbindung ist abgelaufen
+ECONNREFUSED 111 Verbindungsaufbau abgelehnt
+EHOSTDOWN 112 Der Rechner ist nicht aktiv
+EHOSTUNREACH 113 Keine Route zum Zielrechner
+EALREADY 114 Die Operation wird bereits ausgeführt
+EINPROGRESS 115 Die Operation ist jetzt in Bearbeitung
+ESTALE 116 Veraltete Dateizugriffsnummer (file handle)
+EUCLEAN 117 Die Struktur muss bereinigt werden
+ENOTNAM 118 Keine XENIX »named type« Datei
+ENAVAIL 119 Keine XENIX-Semaphoren verfügbar
+EISNAM 120 Ist eine »named type file«
+EREMOTEIO 121 Ein-/Ausgabefehler der Gegenstelle (remote)
+EDQUOT 122 Der zugewiesene Plattenplatz (Quota) ist überschritten
+ENOMEDIUM 123 Kein Medium gefunden
+EMEDIUMTYPE 124 Falscher Medien-Typ
+ECANCELED 125 Die Operation wird abgebrochen
+ENOKEY 126 Der notwendige Schlüssel ist nicht verfügbar
+EKEYEXPIRED 127 Der Schlüssel ist nicht mehr gültig
+EKEYREVOKED 128 Der Schlüssel wurde widerrufen
+EKEYREJECTED 129 Der SChlüssel wurde von Dienst zurückgewiesen
+EOWNERDEAD 130 Der Eigentümer-Prozess wurde beendet
+ENOTRECOVERABLE 131 Der Status ist nicht wiederherstellbar
+ERFKILL 132 Die Operation ist nicht möglich wegen RF-kill
+EHWPOISON 133 Memory-Seite hat einen Hardware-Fehler
+ENOTSUP 95 Die Operation wird nicht unterstützt
