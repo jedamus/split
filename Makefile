@@ -1,4 +1,5 @@
 # erzeugt Samstag, 04. Juli 2015 14:04 (C) 2015 von Leander Jedamus
+# modifiziert Thursday, 07. November 2024 16:20 von 
 # modifiziert Donnerstag, 07. November 2024 15:32 von Leander Jedamus
 # modifiziert Samstag, 24. August 2024 14:24 von Leander Jedamus
 # modifiziert Montag, 12. August 2024 11:00 von Leander Jedamus
@@ -267,7 +268,7 @@ HLIB1FILES		+= $(CLIB1FILES:%.c=%.h)
 FILES			+= $(HLIB1FILES)
 # FILES			+= $(CLIB1FILES2)
 # FILES			+= $(CLIB1FILES2:%.c=%.h)
-LIB1OBJS		:= $(CLIB1FILES:%.c=%.oo)
+LIB1OBJS		:= $(CLIB1FILES:%.c=%.ol)
 # ifeq ($(machtype),Linux)
 #   CSOURCES		+= $(CLIB1FILES2)
 #   CDEPENDS		+= $(CLIB1FILES2:%.c=%.d)
