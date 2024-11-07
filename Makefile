@@ -1,5 +1,5 @@
 # erzeugt Samstag, 04. Juli 2015 14:04 (C) 2015 von Leander Jedamus
-# modifiziert Donnerstag, 07. November 2024 10:10 von Leander Jedamus
+# modifiziert Donnerstag, 07. November 2024 12:00 von Leander Jedamus
 # modifiziert Samstag, 24. August 2024 14:24 von Leander Jedamus
 # modifiziert Montag, 12. August 2024 11:00 von Leander Jedamus
 # modifiziert Mittwoch, 07. August 2024 14:52 von Leander Jedamus
@@ -219,6 +219,7 @@ FILES			+= version.txt
 FILES			+= author.txt author_email.txt license.txt
 FILES			+= maintainer.txt maintainer_email.txt
 FILES			+= updated.txt url.txt description.txt years.txt
+FILES			+= license.md
 FILES			+= translate.c
 # FILES			+= $(PROJECT).cppcheck
 
