@@ -1,4 +1,8 @@
 # erzeugt Samstag, 04. Juli 2015 14:04 (C) 2015 von Leander Jedamus
+# modifiziert Montag, 30. September 2024 21:22 von Leander Jedamus
+# modifiziert Mittwoch, 04. September 2024 22:28 von Leander Jedamus
+# modifiziert Montag, 02. September 2024 23:10 von Leander Jedamus
+# modifiziert Sonntag, 01. September 2024 16:58 von Leander Jedamus
 # modifiziert Mittwoch, 15. November 2023 16:33 von Leander Jedamus
 # modifiziert Mittwoch, 16. August 2023 14:31 von Leander Jedamus
 # modifiziert Dienstag, 15. August 2023 07:53 von Leander Jedamus
@@ -55,155 +59,228 @@ $(RM) $@
 $(strip $(LINK.cc) $(filter %.o,$^) $(LOADLIBES) -o $@ $(LDLIBS))
 endef
 
-define archive
+define static_library
 $(RM) $@
 $(AR) $(ARFLAGS) $@ $^
 $(RANLIB) $@
 endef
 
-define dynamic_link.c
+define library_compile.c
 $(RM) $@
 $(strip $(COMPILE.c) -fPIC $< $(OUTPUT_OPTION))
 endef
 
-define dynamic_link.cc
+define library_compile.cc
 $(RM) $@
 $(strip $(COMPILE.cc) -fPIC $< $(OUTPUT_OPTION))
 endef
 
 ifeq ($(machtype),MacOS)
-  define dynamic_link.o
+  define dynamic_library.ol
     $(RM) $@
     $(CC) -dynamiclib -install_name @rpath/$@ -o $@ $^
   endef
-  define dynamic_link.o++
+  define dynamic_library.osl
     $(RM) $@
     $(CXX) -dynamiclib -install_name @rpath/$@ -o $@ $^
   endef
 else
-  define dynamic_link.o
+  define dynamic_library.ol
     $(RM) $@
     $(CC) -shared -o $@ $^
   endef
-  define dynamic_link.o++
+  define dynamic_library.osl
     $(RM) $@
     $(CXX) -shared -o $@ $^
   endef
 endif
 
-define depend.c.oo
-  $(DEPEND.c) $< | sed -e 's/\.o:/.oo $@: Makefile Makefile.c_and_c++/' > $@
+define depend.c.ol
+  @echo "# generated $(DATETIME) by \"make\"" > $@
+  $(DEPEND.c) $< | sed -e 's/\.o:/.ol $@: Makefile Makefile.c_and_c++/' >> $@
 endef
 
-define depend.cc.oo
-  $(DEPEND.c) $< | sed -e 's/\.o:/.oo $@: Makefile Makefile.c_and_c++/' > $@
+define depend.cc.ol
+  @echo "# generated $(DATETIME) by \"make\"" > $@
+  $(DEPEND.c) $< | sed -e 's/\.o:/.ol $@: Makefile Makefile.c_and_c++/' >> $@
 endef
 
-define depend.c.o++
-  $(DEPEND.c) $< | sed -e 's/\.o:/.o++ $@: Makefile Makefile.c_and_c++/' > $@
+define depend.c.osl
+  @echo "# generated $(DATETIME) by \"make\"" > $@
+  $(DEPEND.c) $< | sed -e 's/\.o:/.osl $@: Makefile Makefile.c_and_c++/' >> $@
 endef
 
-define depend.cc.o++
-  $(DEPEND.c) $< | sed -e 's/\.o:/.o++ $@: Makefile Makefile.c_and_c++/' > $@
+define depend.cc.osl
+  @echo "# generated $(DATETIME) by \"make\"" > $@
+  $(DEPEND.c) $< | sed -e 's/\.o:/.osl $@: Makefile Makefile.c_and_c++/' >> $@
 endef
 
 define depend.c.o
-  $(DEPEND.c) $< | sed -e 's/\.o:/.o $@: Makefile Makefile.c_and_c++/' > $@
+  @echo "# generated $(DATETIME) by \"make\"" > $@
+  $(DEPEND.c) $< | sed -e 's/\.o:/.o $@: Makefile Makefile.c_and_c++/' >> $@
 endef
 
 define depend.cc.o
-  $(DEPEND.cc) $< | sed -e 's/\.o:/.o $@: Makefile Makefile.c_and_c++/' > $@
+  @echo "# generated $(DATETIME) by \"make\"" > $@
+  $(DEPEND.cc) $< | sed -e 's/\.o:/.o $@: Makefile Makefile.c_and_c++/' >> $@
 endef
 
 %.o:		%.c
 		$(compile.c)
 
-%.d:		%.c
-ifeq ($(link_switch),static)
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.c.oo)" "$(depend.c.o)"
-else
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.c.o++)" "$(depend.c.o)"
-endif
+%.d:		%.c %.o
+#		@echo "making $@ from $<"
+		$(depend.c.o)
+
+%.d:		%.c %.ol
+#		@echo "making $@ from $<"
+		$(depend.c.ol)
+
+%.d:		%.c %.osl
+#		@echo "making $@ from $<"
+		$(depend.c.osl)
 
 %.o:		%.c++
+		$(compile.cc)
+
+%.ol:		%.c++
+		$(compile.cc)
+
+%.osl:		%.c++
 		$(compile.cc)
 
 %.o:		%.cpp
 		$(compile.cc)
 
+%.ol:		%.cpp
+		$(compile.cc)
+
+%.osl:		%.cpp
+		$(compile.cc)
+
 %.o:		%.cxx
+		$(compile.cc)
+
+%.ol:		%.cxx
+		$(compile.cc)
+
+%.osl:		%.cxx
 		$(compile.cc)
 
 %.o:		%.cc
 		$(compile.cc)
 
+%.ol:		%.cc
+		$(compile.cc)
+
+%.osl:		%.cc
+		$(compile.cc)
+
 %.o:		%.C
 		$(compile.cc)
 
-%.d:		%.c++
-ifeq ($(link_switch),static)
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.oo)" "$(depend.cc.o)"
-else
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.o++)" "$(depend.cc.o)"
-endif
+%.ol:		%.C
+		$(compile.cc)
 
-%.d:		%.cpp
-ifeq ($(link_switch),static)
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.oo)" "$(depend.cc.o)"
-else
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.o++)" "$(depend.cc.o)"
-endif
+%.osl:		%.C
+		$(compile.cc)
 
-%.d:		%.cxx
-ifeq ($(link_switch),static)
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.oo)" "$(depend.cc.o)"
-else
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.o++)" "$(depend.cc.o)"
-endif
+%.d:		%.c++ %.o
+#		@echo "making $@ from $<"
+		$(depend.cc.o) 
 
-%.d:		%.cc
-ifeq ($(link_switch),static)
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.oo)" "$(depend.cc.o)"
-else
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.o++)" "$(depend.cc.o)"
-endif
+%.d:		%.c++ %.ol
+#		@echo "making $@ from $<"
+		$(depend.cc.ol) 
 
-%.d:		%.C
-ifeq ($(link_switch),static)
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.oo)" "$(depend.cc.o)"
-else
-		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.o++)" "$(depend.cc.o)"
-endif
+%.d:		%.c++ %.osl
+#		@echo "making $@ from $<"
+		$(depend.cc.osl) 
 
-%.o++:		%.c
-		$(dynamic_link.c)
+%.d:		%.cpp %.o
+#		@echo "making $@ from $<"
+		$(depend.cc.o) 
 
-%.oo:		%.c
-		$(dynamic_link.c)
+%.d:		%.cpp %.ol
+#		@echo "making $@ from $<"
+		$(depend.cc.ol) 
 
-%.so:		%.oo
-		$(dynamic_link.o)
+%.d:		%.cpp %.osl
+#		@echo "making $@ from $<"
+		$(depend.cc.osl) 
 
-%.oo:		%.cc
-		$(dynamic_link.cc)
+%.d:		%.cxx %.o
+#		@echo "making $@ from $<"
+		$(depend.cc.o) 
 
-%.o++:		%.cc
-		$(dynamic_link.cc)
+%.d:		%.cxx %.ol
+#		@echo "making $@ from $<"
+		$(depend.cc.ol) 
 
-%.o++:		%.c++
-		$(dynamic_link.cc)
+%.d:		%.cxx %.osl
+#		@echo "making $@ from $<"
+		$(depend.cc.osl) 
 
-%.o++:		%.cpp
-		$(dynamic_link.cc)
+%.d:		%.cc %.o
+#		@echo "making $@ from $<"
+		$(depend.cc.o) 
 
-%.o++:		%.cxx
-		$(dynamic_link.cc)
+%.d:		%.cc %.ol
+#		@echo "making $@ from $<"
+		$(depend.cc.ol) 
 
-%.o++:		%.C
-		$(dynamic_link.cc)
+%.d:		%.cc %.osl
+#		@echo "making $@ from $<"
+		$(depend.cc.osl) 
 
-%.so:		%.o++
-		$(dynamic_link.o++)
+%.d:		%.C %.o
+#		@echo "making $@ from $<"
+		$(depend.cc.o) 
+
+%.d:		%.C %.ol
+#		@echo "making $@ from $<"
+		$(depend.cc.ol) 
+
+%.d:		%.C %.osl
+#		@echo "making $@ from $<"
+		$(depend.cc.osl) 
+
+# %.d:		%.C
+# ifeq ($(link_switch),static)
+# 		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.ol)" "$(depend.cc.o)"
+# else
+# 		@./depend.sh $@ "$(IS_IN_LIB)" "$(depend.cc.osl)" "$(depend.cc.o)"
+# endif
+
+%.osl:		%.c
+		$(library_compile.c)
+
+%.ol:		%.c
+		$(library_compile.c)
+
+%.so:		%.ol
+		$(dynamic_library.ol)
+
+%.so:		%.osl
+		$(dynamic_library.osl)
+
+%.ol:		%.cc
+		$(library_compile.cc)
+
+%.osl:		%.cc
+		$(library_compile.cc)
+
+%.osl:		%.c++
+		$(library_compile.cc)
+
+%.osl:		%.cpp
+		$(library_compile.cc)
+
+%.osl:		%.cxx
+		$(library_compile.cc)
+
+%.osl:		%.C
+		$(library_compile.cc)
 
 # vim:ai sw=2 noexpandtab
 

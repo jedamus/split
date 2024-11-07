@@ -1,5 +1,5 @@
 # erzeugt Samstag, 04. Juli 2015 14:04 (C) 2015 von Leander Jedamus
-# modifiziert Donnerstag, 07. November 2024 12:00 von Leander Jedamus
+# modifiziert Donnerstag, 07. November 2024 15:32 von Leander Jedamus
 # modifiziert Samstag, 24. August 2024 14:24 von Leander Jedamus
 # modifiziert Montag, 12. August 2024 11:00 von Leander Jedamus
 # modifiziert Mittwoch, 07. August 2024 14:52 von Leander Jedamus
@@ -349,6 +349,7 @@ debug:
 			@echo "$$""(CDEPENDS)=$(strip $(CDEPENDS))"
 			@echo "$$""(CCDEPENDS)=$(strip $(CCDEPENDS))"
 			@echo "$$""(PROGRAMS)=$(strip $(PROGRAMS))"
+			@echo "$$""(LIB1OBJS)=$(strip $(LIB1OBJS))"
 			@echo "$$""(PC)=$(strip $(PC))"
 			@echo "$$""(DATETIME)=$(strip $(DATETIME))"
 
@@ -381,7 +382,7 @@ $(PROGRAM2):		$(MAINOBJS2)
 #			$(link.cc)
 
 $(LIBRARY1):		$(LIB1OBJS)
-			$(archive)
+			$(static_library)
 
 .PHONY:			clean
 clean:
