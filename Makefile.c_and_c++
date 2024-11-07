@@ -1,4 +1,5 @@
 # erzeugt Samstag, 04. Juli 2015 14:04 (C) 2015 von Leander Jedamus
+# modifiziert Donnerstag, 07. November 2024 16:24 von Leander Jedamus
 # modifiziert Montag, 30. September 2024 21:22 von Leander Jedamus
 # modifiziert Mittwoch, 04. September 2024 22:28 von Leander Jedamus
 # modifiziert Montag, 02. September 2024 23:10 von Leander Jedamus
@@ -124,6 +125,9 @@ define depend.cc.o
   @echo "# generated $(DATETIME) by \"make\"" > $@
   $(DEPEND.cc) $< | sed -e 's/\.o:/.o $@: Makefile Makefile.c_and_c++/' >> $@
 endef
+
+%.ol:		%.c
+		$(compile.c)
 
 %.o:		%.c
 		$(compile.c)
