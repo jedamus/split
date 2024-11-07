@@ -1,6 +1,7 @@
 /* -*- C -*- */
 /* main.c */
 /* erzeugt Freitag, 26. Januar 2024 14:48 (C) 2024 von Leander Jedamus */
+/* modifiziert Donnerstag, 07. November 2024 10:13 von Leander Jedamus */
 /* modifiziert Montag, 12. August 2024 11:22 von Leander Jedamus */
 /* modifiziert Donnerstag, 07. März 2024 16:09 von Leander Jedamus */
 /* modifiziert Sonntag, 03. März 2024 18:08 von Leander Jedamus */
@@ -156,7 +157,13 @@ int main(int argc, char * argv[]) {
   bindtextdomain(PACKAGE, localedir);
   textdomain(PACKAGE);
 
-  printf(_("%s V%s (C) %s by %s <%s>\n"), PACKAGE, VERSION, YEARS, AUTHOR, EMAIL);
+  printf(_("%s V%s (C) %s by %s <%s>\n"), PROJECT, VERSION, YEARS, AUTHOR, AUTHOR_EMAIL);
+  if (strlen(MAINTAINER) > 0) {
+    printf(_("maintained by %s <%s>\n"), MAINTAINER, MAINTAINER_EMAIL);
+  }
+  if (strlen(LICENSE) > 0) {
+    printf(_("published under license \"%s\"\n"), LICENSE);
+  }
 
 
 #ifdef __unix__

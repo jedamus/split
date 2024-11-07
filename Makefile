@@ -1,4 +1,5 @@
 # erzeugt Samstag, 04. Juli 2015 14:04 (C) 2015 von Leander Jedamus
+# modifiziert Donnerstag, 07. November 2024 10:10 von Leander Jedamus
 # modifiziert Samstag, 24. August 2024 14:24 von Leander Jedamus
 # modifiziert Montag, 12. August 2024 11:00 von Leander Jedamus
 # modifiziert Mittwoch, 07. August 2024 14:52 von Leander Jedamus
@@ -35,11 +36,16 @@ VPATH			:= # search path for files not found in the current directpry; separated
 .LIBPATTERNS		:= lib%.so lib%.a
 
 debug_switch		:= true
-link_switch		:= static
+link_switch		:= static# shared
 
 DEPENDFILE		:= .depend
 PRINTFILE		:= .print
+
+DATE			:= $(shell date +\"%y%m%d\")
+DATETIME		:= $(shell date +\"%d.%m.%Y\ %H:%M\")
+PROJECT			:= $(shell cat project.txt)
 PROJECT_FILES		:= project.h version.h
+
 # TEXINFOFILE		:= check.texinfo
 # INFOFILE		:= $(TEXINFOFILE:%.texinfo=%.info)
 # XMLFILE			:= $(TEXINFOFILE:%.texinfo=%.xml)
@@ -48,9 +54,16 @@ PROJECT_FILES		:= project.h version.h
 # HTMLFILE		:= $(TEXINFOFILE:%.texinfo=%.html)
 # HTMLDIR			:= $(TEXINFOFILE:%.texinfo=%)
 
-DATE			:= $(shell date +\"%y%m%d\")
-DATETIME		:= $(shell date +\"%d.%m.%Y\ %H:%M\")
-PROJECT			:= $(shell cat project.txt)
+PREFIX			:= /usr/local
+BINDIR			:= $(PREFIX)/bin
+LIBDIR			:= $(PREFIX)/lib
+DATAROOTDIR		:= $(PREFIX)/share
+DATADIR			:= $(DATAROOTDIR)
+MANDIR			:= $(DATAROOTDIR)/man
+INFODIR			:= $(DATAROOTDIR)/info
+DOCDIR			:= $(DATAROOTDIR)/doc/$(PROJECT)
+LOCALEDIR		:= $(DATAROOTDIR)/locale
+
 BACKUPDIR		:= $(PROJECT)
 TARFILE			:= $(PROJECT).tar.gz
 ZIPFILE			:= $(PROJECT)_$(DATE).zip
@@ -171,7 +184,8 @@ CSOURCES		:= # put your c source files here \
 			    (will be used e.g. by "make depend")
 CDEPENDS		:= # here you add the .d files make from .c files
 CCDEPENDS		:= # here you add the .d files make from .cc files
-IS_IN_LIB		:= # here you add the .d files, which obj-files are in a library
+IS_IN_LIB		:= # no longer needed
+SHARED_LIBS		:= # here you add all shared libraries
 CCSOURCES		:= # put your c++ source files here. File types \
 			    "*.cc,*.cpp,*.c++,*.cxx,*.C" are recognized. \
 			    (will be used e.g. by "make depend")
@@ -198,11 +212,15 @@ FILES			+= distclean.sh
 FILES			+= zip.sh
 FILES			+= create_project.sh
 FILES			+= create_version.sh
+FILES			+= install_bin.sh install_lib.sh install_locale.sh
+FILES			+= bin_dist.sh
 FILES			+= project.txt
 FILES			+= version.txt
-FILES			+= author.txt email.txt years.txt
+FILES			+= author.txt author_email.txt license.txt
+FILES			+= maintainer.txt maintainer_email.txt
+FILES			+= updated.txt url.txt description.txt years.txt
 FILES			+= translate.c
-# FILES			+= va_args.cppcheck
+# FILES			+= $(PROJECT).cppcheck
 
 # use this for your c++ source files (uncomment for use with your c++-file):
 #CCSOURCES.cc		:= #
@@ -301,8 +319,19 @@ PROGRAM2		:= errno
 PROGRAMS		:= $(PROJECT_FILES) $(strip $(PROGRAM1) $(PROGRAM2))
 
 .PHONY:			all
-all::			$(PROGRAMS)
+all:			$(PROGRAMS)
 			@echo done.
+
+.PHONY:			install
+install:		$(PROJECT_FILES) $(PROGRAMS)
+			@sh ./install_bin.sh $(BINDIR) $(PROGRAM1) $(PROGRAM2)
+#			@sh ./install_lib.sh $(LIBDIR) $(LIB2RARY)
+			@sh ./install_locale.sh $(LOCALEDIR) $(PROJECT).mo
+
+.PHONY:			bin_dist
+bin_dist:		$(PROJECT_FILES) $(PROGRAMS)
+			@sh ./bin_dist.sh $(PROGRAM1) $(PROJECT) $(SHARED_LIBS)
+#			@sh ./bin_dist.sh $(PROGRAM2) $(PROJECT) $(SHARED_LIBS)
 
 .PHONY:			strip
 strip:			$(PROGRAMS)
@@ -379,11 +408,11 @@ $(PRINTFILE):		$(FILES)
 .PHONY:			dummy
 dummy:
 
-project.h:		project.txt author.txt email.txt years.txt
+project.h:		project.txt author.txt author_email.txt license.txt maintainer.txt maintainer_email.txt url.txt description.txt years.txt create_project.sh
 			@echo "creating $@"
 			@./create_project.sh $@
 
-version.h:		version.txt author.txt
+version.h:		version.txt author.txt updated.txt create_version.sh
 			@echo "creating $@"
 			@./create_version.sh $@
 
